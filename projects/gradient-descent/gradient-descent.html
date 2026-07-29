@@ -1,167 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gradient Descent</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gradient Descent From Scratch- Anusha Kodavuru</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        body{
-            font-family:Inter,Segoe UI,Arial,sans-serif;
-            background:#fafafa;
-            color:#222;
-            line-height:1.7;
-        }
-
-        .container{
-            max-width:900px;
-            margin:auto;
-            padding:70px 25px;
-        }
-
-        h1{
-            font-size:2.7rem;
-            margin-bottom:10px;
-        }
-
-        .subtitle{
-            color:#666;
-            margin-bottom:50px;
-            font-size:1.05rem;
-        }
-
-        .card{
-            background:white;
-            border:1px solid #e5e5e5;
-            border-radius:14px;
-            padding:24px;
-            margin-bottom:22px;
-            transition:.25s;
-        }
-
-        .card:hover{
-            transform:translateY(-3px);
-            box-shadow:0 10px 30px rgba(0,0,0,.07);
-        }
-
-        .card a{
-            text-decoration:none;
-            color:#0f62fe;
-            font-size:1.2rem;
-            font-weight:600;
-        }
-
-        .card p{
-            margin-top:10px;
-            color:#555;
-        }
-
-        footer{
-            margin-top:60px;
-            text-align:center;
-            color:#777;
-            font-size:.95rem;
-        }
-
-        @media(max-width:700px){
-            h1{
-                font-size:2rem;
-            }
-        }
-    </style>
-
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body>
 
-<div class="container">
+<body class="bg-orange-50 text-gray-900 w-full max-w-3xl mx-auto px-5 md:px-0 pb-10">
 
-<h1>Gradient Descent</h1>
+  <!-- Navigation -->
+  <nav class="flex justify-between items-center py-6 border-b border-gray-300">
+    <h1 class="font-serif text-3xl font-bold">Anusha Kodavuru</h1>
 
-<p class="subtitle">
-A collection of interactive Kaggle notebooks covering the fundamentals of Gradient Descent, its variants, and practical implementations from scratch.
-</p>
+    <div class="flex gap-6 text-sm">
+      <a href="../../index.html" class="hover:text-orange-600 transition">Home</a>
+      <a href="../../blogs/blog.html" class="hover:text-orange-600 transition">Blogs</a>
+      <a href="../projects.html" class="hover:text-orange-600 transition">Projects</a>
+    </div>
+  </nav>
 
-<div class="card">
-<a href="https://www.kaggle.com/code/aiwithanu/learn-gradient-descent" target="_blank">
-Learn Gradient Descent
-</a>
+  <!-- Header -->
+  <section class="mt-8 space-y-4">
+    <h2 class="text-3xl font-semibold">Gradient Descent From Scratch</h2>
 
-<p>
-An introductory notebook explaining the intuition behind gradient descent, how optimization works, and why iterative parameter updates help minimize loss functions.
-</p>
-</div>
+    <p class="text-gray-600">
+      A curated collection of Kaggle notebooks covering Gradient Descent from first principles
+      to practical implementations in Machine Learning.
+    </p>
+  </section>
 
-<div class="card">
-<a href="https://www.kaggle.com/code/aiwithanu/gradient-descent-for-simple-linear-regression" target="_blank">
-Gradient Descent for Simple Linear Regression
-</a>
+  <!-- Notebook List -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-semibold mb-6">Notebooks</h2>
 
-<p>
-Implements gradient descent from scratch to train a simple linear regression model, illustrating how slope and intercept converge toward the optimal solution.
-</p>
-</div>
+    <ul class="list-none space-y-5">
 
-<div class="card">
-<a href="https://www.kaggle.com/code/aiwithanu/gradient-descent-with-changing-intercept" target="_blank">
-Gradient Descent with Changing Intercept
-</a>
+      <li class="flex justify-between items-start py-2">
+        <span class="text-gray-500 w-44">
+          <a href="https://www.kaggle.com/code/aiwithanu/learn-gradient-descent"
+             target="_blank"
+             class="hover:underline underline-offset-4">
+            Learn Gradient Descent
+          </a>
+        </span>
 
-<p>
-Demonstrates simultaneous optimization of both slope and intercept, showing how parameter updates affect convergence and prediction accuracy.
-</p>
-</div>
+        <span class="flex-1 font-mono text-sm">
+          Learn the intuition behind gradient descent, loss functions, gradients, and iterative optimization from scratch.
+        </span>
+      </li>
 
-<div class="card">
-<a href="https://www.kaggle.com/code/aiwithanu/stochastic-gradient-descent" target="_blank">
-Stochastic Gradient Descent (SGD)
-</a>
+      <li class="flex justify-between items-start py-2">
+        <span class="text-gray-500 w-44">
+          <a href="https://www.kaggle.com/code/aiwithanu/gradient-descent-for-simple-linear-regression"
+             target="_blank"
+             class="hover:underline underline-offset-4">
+            Simple Linear Regression
+          </a>
+        </span>
 
-<p>
-Explores stochastic gradient descent, where model parameters are updated after every training sample for faster learning and improved scalability.
-</p>
-</div>
+        <span class="flex-1 font-mono text-sm">
+          Implement gradient descent from scratch to optimize the parameters of a simple linear regression model.
+        </span>
+      </li>
 
-<div class="card">
-<a href="https://www.kaggle.com/code/aiwithanu/batch-gd-gradient-descent-on-n-dim-data" target="_blank">
-Batch Gradient Descent on N-Dimensional Data
-</a>
+      <li class="flex justify-between items-start py-2">
+        <span class="text-gray-500 w-44">
+          <a href="https://www.kaggle.com/code/aiwithanu/gradient-descent-with-changing-intercept"
+             target="_blank"
+             class="hover:underline underline-offset-4">
+            Changing Intercept
+          </a>
+        </span>
 
-<p>
-Extends gradient descent to multivariate datasets, demonstrating batch optimization across multiple input features using vectorized computations.
-</p>
-</div>
+        <span class="flex-1 font-mono text-sm">
+          Optimize both slope and intercept simultaneously and visualize their convergence during training.
+        </span>
+      </li>
 
-<div class="card">
-<a href="https://www.kaggle.com/code/aiwithanu/mini-batch-gradient-descent" target="_blank">
-Mini-Batch Gradient Descent
-</a>
+      <li class="flex justify-between items-start py-2">
+        <span class="text-gray-500 w-44">
+          <a href="https://www.kaggle.com/code/aiwithanu/stochastic-gradient-descent"
+             target="_blank"
+             class="hover:underline underline-offset-4">
+            Stochastic GD
+          </a>
+        </span>
 
-<p>
-Introduces mini-batch gradient descent, balancing computational efficiency and convergence stability by updating parameters using small batches of data.
-</p>
-</div>
+        <span class="flex-1 font-mono text-sm">
+          Understand how Stochastic Gradient Descent updates parameters using one training example at a time.
+        </span>
+      </li>
 
-<div class="card">
-<a href="https://www.kaggle.com/code/aiwithanu/perceptron-loss-using-gradient-descent" target="_blank">
-Perceptron Loss using Gradient Descent
-</a>
+      <li class="flex justify-between items-start py-2">
+        <span class="text-gray-500 w-44">
+          <a href="https://www.kaggle.com/code/aiwithanu/batch-gd-gradient-descent-on-n-dim-data"
+             target="_blank"
+             class="hover:underline underline-offset-4">
+            Batch GD
+          </a>
+        </span>
 
-<p>
-Illustrates how gradient descent can optimize the perceptron loss function, providing insight into linear classification and decision boundary learning.
-</p>
-</div>
+        <span class="flex-1 font-mono text-sm">
+          Extend gradient descent to multiple input features using vectorized batch optimization.
+        </span>
+      </li>
 
-<footer>
-Built with ❤️ by Anusha
-</footer>
+      <li class="flex justify-between items-start py-2">
+        <span class="text-gray-500 w-44">
+          <a href="https://www.kaggle.com/code/aiwithanu/mini-batch-gradient-descent"
+             target="_blank"
+             class="hover:underline underline-offset-4">
+            Mini-Batch GD
+          </a>
+        </span>
 
-</div>
+        <span class="flex-1 font-mono text-sm">
+          Explore mini-batch gradient descent, balancing convergence speed and computational efficiency.
+        </span>
+      </li>
+
+      <li class="flex justify-between items-start py-2">
+        <span class="text-gray-500 w-44">
+          <a href="https://www.kaggle.com/code/aiwithanu/perceptron-loss-using-gradient-descent"
+             target="_blank"
+             class="hover:underline underline-offset-4">
+            Perceptron Loss
+          </a>
+        </span>
+
+        <span class="flex-1 font-mono text-sm">
+          Implement gradient descent for perceptron loss and understand linear classification optimization.
+        </span>
+      </li>
+
+    </ul>
+  </section>
 
 </body>
 </html>
