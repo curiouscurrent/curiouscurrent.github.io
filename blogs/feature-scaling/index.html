@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>feature scaling</title>
+
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-orange-50 text-gray-900 w-full max-w-3xl mx-auto px-5 md:px-0 pb-10">
+
+  <!-- navigation -->
+  <nav class="flex justify-between items-center py-6 border-b border-gray-300">
+
+    <h1 class="font-serif text-3xl font-bold">
+      Feature Scaling Blog
+    </h1>
+
+    <div class="flex gap-6 text-sm">
+      <a href="../../index.html" class="hover:text-orange-600 transition">Home</a>
+      <a href="../blog.html" class="hover:text-orange-600 transition">Blogs</a>
+      <a href="../../projects/projects.html" class="hover:text-orange-600 transition">Projects</a>
+    </div>
+
+  </nav>
+
+  <!-- header -->
+  <section class="mt-8 space-y-4">
+
+
+    <p class="text-gray-600">
+      understanding the correct scaling procedure and when to use standardisation,
+      minmax scaling, robust scaling, mean normalisation and max absolute scaling.
+    </p>
+
+  </section>
+
+  <!-- blog -->
+  <article class="mt-10 space-y-10">
+
+    <section class="space-y-6">
+
+      <h3 class="text-2xl font-semibold">
+        scaling procedure
+      </h3>
+
+      <ol class="list-decimal pl-6 space-y-5">
+
+        <li>
+          before any type of scaling, always do a train test split.
+        </li>
+
+        <li>
+
+          always fit the scaler to the train set, it will learn the parameters.
+
+          <ul class="list-disc pl-6 mt-4 space-y-2">
+
+            <li>
+              in case of <span class="font-semibold">StandardScaler</span> : the parameters learnt are mean and standard deviation of the training data.
+            </li>
+
+            <li>
+              in case of <span class="font-semibold">MinMaxScaler</span> : the parameters learnt are min and max values of the training data.
+            </li>
+
+            <li>
+              in case of <span class="font-semibold">Mean Normalisation</span> : the parameters learnt are mean, max, min values of the training data.
+            </li>
+
+            <li>
+              in case of <span class="font-semibold">MaxAbsScaler</span> : the parameters learnt are maximum absolute value of the training data.
+            </li>
+
+            <li>
+              in case of <span class="font-semibold">RobustScaler</span> : the parameters learnt are median and interquartile range of the training data.
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li>
+          then using these parameters transform the training and the test sets.
+        </li>
+
+      </ol>
+
+    </section>
+
+    <section class="space-y-6">
+
+      <h3 class="text-2xl font-semibold">
+        when to use normalisation vs standardisation ?
+      </h3>
+
+      <ol class="list-decimal pl-6 space-y-5">
+
+        <li>
+          ask if feature scaling is required ?
+        </li>
+
+        <li>
+          most of the problems will be solved using standardisation.
+        </li>
+
+        <li>
+
+          normalisation has 4 techniques :
+
+          <ul class="list-disc pl-6 mt-4 space-y-5">
+
+            <li>
+
+              <span class="font-semibold">minmax scaling</span> : to be used when you know beforehand, the min and max value of your numerical quantity.
+
+              <br><br>
+
+              real life usecase : during image processing, we use CNN, and the color channels min value = 0, max value = 255, in this case we use <span class="font-semibold">MinMaxScaler</span>.
+
+            </li>
+
+            <li>
+              <span class="font-semibold">robust scaling</span> : when your data has outliers.
+            </li>
+
+            <li>
+              <span class="font-semibold">mean normalisation</span> : when you are working with centered data.
+            </li>
+
+            <li>
+              <span class="font-semibold">max absolute scaling</span> : when dealing with sparse data (meaning lots of 0's), sparse matrix.
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li>
+          when you have no idea -> go with <span class="font-semibold">StandardScaler</span>.
+        </li>
+
+      </ol>
+
+    </section>
+
+    <section class="space-y-6">
+
+      <h3 class="text-2xl font-semibold">
+        robust scaling example
+      </h3>
+
+      <p>
+        below is where i tried <span class="font-semibold">RobustScaler</span> on data containing outliers :
+      </p>
+
+      <img
+        src="images/robust_scaling.jpg"
+        alt="robust scaling"
+        class="w-full rounded-lg border border-gray-300"
+      >
+
+      <p>
+        after scaling we can see that :
+      </p>
+
+      <p>
+        while the outliers are still present, they are not compressed into the main cluster unlike <span class="font-semibold">MinMaxScaler</span>. this is because <span class="font-semibold">RobustScaler</span> scales features using statistics that are robust to outliers, i.e the median and the interquartile range (IQR).
+      </p>
+
+    </section>
+
+  </article>
+
+</body>
+</html>
