@@ -158,9 +158,8 @@
            class="flex justify-between items-center py-2 hover:underline underline-offset-4">
           <span class="text-gray-500 w-40">Production Project</span>
           <span class="flex-1 font-mono text-lg">
-            Develop a production-grade Vehicle Insurance Prediction system by integrating
-            MongoDB, modular data pipelines, validation, transformation, model training,
-            AWS deployment, and complete MLOps engineering best practices.
+            In this project, I first set up the project structure, created a virtual environment, installed all the required dependencies, and configured local packages. Then I created a MongoDB Atlas database, uploaded the dataset from a Jupyter notebook, and connected my project to fetch the data. After that, I implemented logging and exception handling to make debugging easier. The pipeline then performs data ingestion by loading data from MongoDB, data validation to check the dataset quality and schema, data transformation to preprocess the data for machine learning, and model training to build the prediction model. Finally, I configured AWS S3 as a model registry, where the newly trained model is evaluated against the existing production model using the F1-score. If the new model performs better than the existing one, it is automatically uploaded to the S3 bucket; otherwise, the current production model is retained. This creates a complete end-to-end MLOps pipeline from data storage to automated model deployment.
+
           </span>
         </a>
       </li>
